@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brothers Bike point Hyderabad | Bike Repair & Doorstep Service</title>
+  <meta name="description" content="Professional two-wheeler servicing and repairs across Hyderabad. Free pick-up & drop, genuine parts, same-day delivery."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+/* ─── COLOUR TOKENS ─────────────────────────────────────────────────────── */
+:root{
+  --red:        #E11D2E;
+  --red-dk:     #FF2A2A;
+  --red-lt:     #FF6B6B;
+  --red-pale:   rgba(225,29,46,0.12);
+  --bg:         #0B0B0B;
+  --bg2:        #111111;
+  --bg3:        #0D0D0D;
+  --card:       #1A1A1A;
+  --card2:      #222222;
+  --white:      #FFFFFF;
+  --ink:        #FFFFFF;
+  --ink2:       #D1D5DB;
+  --ink3:       #9CA3AF;
+  --border:     #2F2F2F;
+  --shadow:     0 8px 40px rgba(0,0,0,.40);
+  --shadow-btn: 0 4px 16px rgba(225,29,46,0.35);
+  --shadow-red: 0 0 18px rgba(225,29,46,0.30);
+  --r:          14px;
+  --r-sm:       10px;
+  --font:       'Poppins',sans-serif;
+  --t:          .22s ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+input,select,textarea,button{font-family:var(--font)}
+
+#admin{display:none}
+
+/* ─── NAV ──────────────────────────────────────────────────────────────── */
+.logo-icon img{width:60px;height:80px;object-fit:contain}
+.navbar{position:sticky;top:0;z-index:1000;background:rgba(11,11,11,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:72px;box-shadow:0 2px 12px rgba(0,0,0,.30)}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.logo-text h1{font-size:1.15rem;font-weight:700;line-height:1.2;letter-spacing:-.01em;color:var(--white)}
+.logo-text p{font-size:.72rem;color:var(--ink3)}
+.nav-links{display:flex;gap:36px}
+.nav-links a{font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);transition:color var(--t)}
+.nav-links a:hover{color:var(--red)}
+.nav-actions{display:flex;align-items:center;gap:16px}
+.btn-call-nav{font-size:.88rem;font-weight:700;background:none;border:none;cursor:pointer;color:var(--ink2);transition:color var(--t)}
+.btn-call-nav:hover{color:var(--red)}
+.btn-book-nav{background:var(--red);color:#fff;font-size:.88rem;font-weight:700;padding:10px 26px;border-radius:50px;border:none;cursor:pointer;box-shadow:var(--shadow-btn);transition:all var(--t)}
+.btn-book-nav:hover{background:var(--red-dk);transform:translateY(-1px);box-shadow:var(--shadow-red)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--ink2);border-radius:2px;transition:all var(--t)}
+.mobile-menu{display:none;flex-direction:column;background:var(--card);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:.9rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink2)}
+.mobile-menu .mb-btns{display:flex;gap:12px;margin-top:6px}
+
+/* ─── HERO ──────────────────────────────────────────────────────────────── */
+.hero{min-height:calc(100vh - 72px);background:radial-gradient(ellipse at 25% 50%,rgba(225,29,46,.18) 0%,transparent 55%),radial-gradient(ellipse at 78% 40%,rgba(255,42,42,.12) 0%,transparent 55%),linear-gradient(115deg,#0B0B0B 0%,#111111 50%,#0D0D0D 100%);display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent,transparent 28px,rgba(255,255,255,.02) 28px,rgba(255,255,255,.02) 29px);pointer-events:none}
+.hero-left{padding:80px 56px 80px 64px;position:relative;z-index:2}
+.rating-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(26,26,26,.90);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.10);border-radius:50px;padding:9px 18px;margin-bottom:28px;box-shadow:0 2px 16px rgba(0,0,0,.30);flex-wrap:wrap}
+.rating-badge .stars{color:#F59E0B;font-size:1rem;letter-spacing:1px}
+.rating-badge .rt{font-size:.82rem;font-weight:600;color:var(--ink2)}
+.rating-badge .dot{width:4px;height:4px;background:var(--ink3);border-radius:50%}
+.rating-badge .tr{font-size:.82rem;font-weight:500;color:var(--ink3)}
+.hero h1{font-size:clamp(2rem,4.5vw,3.9rem);font-weight:800;line-height:1.06;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:22px}
+.hero h1 .red{color:var(--red);display:block}
+.hero h1 .white{color:var(--white);display:block}
+.hero-sub{font-size:.95rem;color:var(--ink2);max-width:420px;margin-bottom:32px;line-height:1.75}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.htag{display:inline-flex;align-items:center;gap:6px;background:rgba(26,26,26,.80);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.10);border-radius:50px;padding:7px 14px;font-size:.78rem;font-weight:600;color:var(--ink2);box-shadow:0 2px 8px rgba(0,0,0,.20)}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-ph{background:var(--red);color:#fff;padding:14px 32px;border-radius:50px;border:none;font-size:.92rem;font-weight:700;cursor:pointer;box-shadow:var(--shadow-btn);transition:all var(--t);display:inline-flex;align-items:center;gap:8px}
+.btn-ph:hover{background:var(--red-dk);transform:translateY(-2px);box-shadow:var(--shadow-red)}
+.btn-sh{background:#2F2F2F;color:var(--white);padding:14px 28px;border-radius:50px;border:2px solid #9CA3AF;font-size:.92rem;font-weight:700;cursor:pointer;transition:all var(--t);display:inline-flex;align-items:center;gap:8px}
+.btn-sh:hover{background:#3A3A3A;border-color:var(--red);color:var(--red)}
+.hero-right{padding:48px 64px 48px 40px;display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+
+/* ─── FORM CARD ─────────────────────────────────────────────────────────── */
+.form-card{
+  background:rgba(26,26,26,.97);
+  backdrop-filter:blur(16px);
+  border-radius:22px;
+  padding:36px 32px;
+  width:100%;
+  max-width:440px;
+  box-shadow:0 8px 48px rgba(0,0,0,.40);
+  border:1px solid rgba(255,255,255,.08);
+}
+.form-card h3{font-size:1.25rem;font-weight:700;margin-bottom:6px;letter-spacing:-.01em;color:var(--white)}
+.form-card .sub{font-size:.84rem;color:var(--ink3);margin-bottom:24px;line-height:1.6}
+
+/* ─── FORM FIELDS ───────────────────────────────────────────────────────── */
+.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.fg label{font-size:.80rem;font-weight:600;color:var(--ink2)}
+.fg input,.fg select,.fg textarea{
+  background:#111111;
+  border:1.5px solid var(--border);
+  color:var(--ink);
+  padding:12px 14px;
+  border-radius:var(--r-sm);
+  font-size:.88rem;
+  font-family:var(--font);
+  outline:none;
+  transition:border-color var(--t),box-shadow var(--t);
+  width:100%;
+  color-scheme:dark;
+  /* Prevent iOS font zoom — must be at least 16px on mobile */
+  -webkit-appearance:none;
+  appearance:none;
+}
+.fg input::placeholder,.fg textarea::placeholder{color:#6B7280}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(225,29,46,.15)}
+.fg select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239CA3AF' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 14px center;
+  padding-right:36px;
+  cursor:pointer;
+  background-color:#111111;
+}
+.fg select option{background:#1A1A1A;color:var(--ink)}
+.fg textarea{resize:vertical;min-height:76px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn-submit{
+  width:100%;
+  background:var(--red);
+  color:#fff;
+  padding:15px;
+  border-radius:50px;
+  border:none;
+  font-size:.95rem;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:var(--shadow-btn);
+  transition:all var(--t);
+  margin-top:4px;
+  min-height:50px;
+  touch-action:manipulation;
+}
+.btn-submit:hover{background:var(--red-dk);transform:translateY(-1px);box-shadow:var(--shadow-red)}
+.btn-submit:disabled{opacity:.7;cursor:not-allowed;transform:none}
+.form-note{text-align:center;color:var(--ink3);font-size:.72rem;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:5px}
+.form-msg{display:none;padding:12px 16px;border-radius:var(--r-sm);font-size:.84rem;font-weight:600;margin-top:12px;text-align:center}
+.form-msg.ok{display:block;background:rgba(34,197,94,.12);color:#4ADE80;border:1px solid rgba(34,197,94,.25)}
+.form-msg.err{display:block;background:var(--red-pale);color:var(--red-lt);border:1px solid rgba(225,29,46,.30)}
+
+/* ─── FLOAT BUTTONS ─────────────────────────────────────────────────────── */
+.float-btns{position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:12px;z-index:900}
+.float-btn{width:60px;height:60px;border-radius:50%;display:flex;justify-content:center;align-items:center;box-shadow:0 4px 12px rgba(0,0,0,.5);cursor:pointer;text-decoration:none;transition:transform .3s ease,box-shadow .3s ease}
+.float-btn img{width:60px;height:60px}
+.float-btn:hover{transform:scale(1.1)}
+.float-btn.whatsapp:hover{box-shadow:0 0 15px rgba(37,211,102,.7)}
+.float-btn:not(.whatsapp):hover{box-shadow:0 0 15px rgba(225,29,46,.7)}
+
+/* ─── BRANDS ────────────────────────────────────────────────────────────── */
+.brands-strip{background:var(--card);border-bottom:1px solid var(--border);padding:22px 40px}
+.brands-inner{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.bl{font-size:.72rem;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.10em;white-space:nowrap}
+.brand-tag{background:var(--bg2);border:1.5px solid var(--border);color:var(--ink2);font-size:.78rem;font-weight:700;padding:6px 16px;border-radius:50px;letter-spacing:.04em;transition:all var(--t);cursor:default}
+.brand-tag:hover{background:var(--red);color:#fff;border-color:var(--red);box-shadow:var(--shadow-btn)}
+
+/* ─── SECTIONS ──────────────────────────────────────────────────────────── */
+.section{padding:80px 40px}
+.alt{background:var(--bg2)}
+.warm{background:var(--bg3)}
+.s-eyebrow{display:inline-block;font-size:.72rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.14em;background:var(--red-pale);border:1px solid rgba(225,29,46,.30);border-radius:50px;padding:5px 14px;margin-bottom:14px}
+.s-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px;color:var(--white)}
+.s-title span{color:var(--red)}
+.s-desc{font-size:.94rem;color:var(--ink3);max-width:520px;line-height:1.75;margin-bottom:48px}
+.s-center{text-align:center}
+.s-center .s-desc{margin-left:auto;margin-right:auto}
+
+/* ─── SERVICES GRID ─────────────────────────────────────────────────────── */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.svc-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);padding:28px 24px;transition:all var(--t)}
+.svc-card:hover{border-color:var(--red);box-shadow:var(--shadow-red);transform:translateY(-4px)}
+.svc-icon{width:52px;height:52px;background:var(--red-pale);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+.svc-card h4{font-size:1rem;font-weight:700;margin-bottom:14px;color:var(--white)}
+.svc-card ul{display:flex;flex-direction:column;gap:8px}
+.svc-card li{display:flex;align-items:flex-start;gap:8px;font-size:.82rem;color:var(--ink2);line-height:1.5}
+.ck{color:var(--red);font-weight:700;margin-top:1px;flex-shrink:0}
+
+/* ─── STEPS ─────────────────────────────────────────────────────────────── */
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.step-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);padding:30px 24px;position:relative;transition:all var(--t)}
+.step-card:hover{border-color:var(--red);background:var(--card2);box-shadow:var(--shadow-red);transform:translateY(-3px)}
+.step-num{position:absolute;top:20px;right:20px;width:32px;height:32px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:800;color:#fff}
+.step-icon{width:48px;height:48px;background:var(--red-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.step-card h4{font-size:.96rem;font-weight:700;margin-bottom:8px;color:var(--white)}
+.step-card p{font-size:.82rem;color:var(--ink3);line-height:1.65}
+
+/* ─── PRICING ───────────────────────────────────────────────────────────── */
+.p-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
+.p-card{background:var(--card);border:1.5px solid var(--border);border-radius:18px;padding:34px 28px;position:relative;transition:all var(--t)}
+.p-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-red)}
+.p-card.pop{border-color:var(--red);box-shadow:0 8px 40px rgba(225,29,46,.20)}
+.pop-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:.68rem;font-weight:800;padding:4px 16px;border-radius:50px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.p-type{font-size:.72rem;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.10em;margin-bottom:14px}
+.p-price{display:flex;align-items:flex-end;gap:10px;margin-bottom:4px}
+.p-new{font-size:2.6rem;font-weight:800;line-height:1;letter-spacing:-.02em;color:var(--white)}
+.p-old{font-size:.96rem;font-weight:500;color:var(--ink3);text-decoration:line-through;margin-bottom:4px}
+.p-bike{font-size:.80rem;color:var(--ink3);margin-bottom:22px}
+.p-feats{display:flex;flex-direction:column;gap:9px;margin-bottom:26px}
+.p-feats li{display:flex;align-items:center;gap:8px;font-size:.83rem;color:var(--ink2)}
+.p-feats .gck{color:#22C55E;font-weight:800}
+.btn-p{width:100%;padding:12px;border-radius:50px;font-size:.88rem;font-weight:700;cursor:pointer;transition:all var(--t);border:2px solid var(--border);background:transparent;color:var(--ink2);font-family:var(--font)}
+.p-card.pop .btn-p,.btn-p:hover{background:var(--red);border-color:var(--red);color:#fff;box-shadow:var(--shadow-btn)}
+
+/* ─── PROMISE ───────────────────────────────────────────────────────────── */
+.promise{background:linear-gradient(135deg,#1A0608 0%,#2A0B0F 40%,#0B0B0B 100%);border-top:1px solid rgba(225,29,46,.20);border-bottom:1px solid rgba(225,29,46,.20);padding:64px 40px}
+.pr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.pr-card{background:rgba(225,29,46,.08);border:1.5px solid rgba(225,29,46,.22);border-radius:var(--r);padding:28px 24px;transition:background var(--t)}
+.pr-card:hover{background:rgba(225,29,46,.16)}
+.pr-icon{font-size:1.8rem;margin-bottom:12px}
+.pr-card h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px}
+.pr-card p{font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.65}
+
+/* ─── WHY ───────────────────────────────────────────────────────────────── */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.why-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);padding:28px 24px;transition:all var(--t)}
+.why-card:hover{border-color:var(--red);background:var(--card2);transform:translateY(-3px);box-shadow:var(--shadow-red)}
+.wi{width:46px;height:46px;border-radius:12px;font-size:20px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.wi-o{background:var(--red-pale)}
+.wi-b{background:rgba(225,29,46,.08)}
+.wi-g{background:rgba(34,197,94,.10)}
+.wi-y{background:rgba(245,158,11,.10)}
+.why-card h4{font-size:.92rem;font-weight:700;margin-bottom:7px;color:var(--white)}
+.why-card p{font-size:.81rem;color:var(--ink3);line-height:1.65}
+
+/* ─── REVIEWS ───────────────────────────────────────────────────────────── */
+.r-header{display:flex;align-items:center;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.big-r{font-size:4.5rem;font-weight:900;color:var(--red);line-height:1;letter-spacing:-.03em}
+.r-meta .stars{color:#F59E0B;font-size:1.1rem;margin-bottom:3px}
+.r-meta p{font-size:.82rem;color:var(--ink3)}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:18px}
+.r-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);padding:22px;transition:all var(--t)}
+.r-card:hover{border-color:var(--red);box-shadow:var(--shadow-red)}
+.r-stars{color:#F59E0B;font-size:.86rem;margin-bottom:11px}
+.r-text{font-size:.84rem;color:var(--ink2);margin-bottom:14px;line-height:1.7}
+.r-author{display:flex;align-items:center;gap:10px}
+.r-av{width:36px;height:36px;border-radius:50%;background:var(--red-pale);border:2px solid rgba(225,29,46,.30);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.r-name strong{display:block;font-size:.84rem;font-weight:700;color:var(--white)}
+.r-name span{font-size:.74rem;color:var(--ink3)}
+
+/* ─── FAQ ───────────────────────────────────────────────────────────────── */
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);margin-bottom:12px;overflow:hidden;transition:border-color var(--t),box-shadow var(--t)}
+.faq-item.open{border-color:var(--red);box-shadow:var(--shadow-red)}
+.faq-q{width:100%;text-align:left;background:none;border:none;color:var(--white);padding:18px 22px;font-size:.9rem;font-family:var(--font);font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-arr{width:28px;height:28px;border-radius:50%;background:var(--red-pale);display:flex;align-items:center;justify-content:center;color:var(--red);font-size:1.1rem;transition:all var(--t);flex-shrink:0}
+.faq-item.open .faq-arr{background:var(--red);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-a{max-height:200px}
+.faq-a p{padding:0 22px 20px;font-size:.86rem;color:var(--ink3);line-height:1.75}
+
+/* ─── AREAS ─────────────────────────────────────────────────────────────── */
+.areas{display:flex;flex-wrap:wrap;gap:10px}
+.area{background:var(--card);border:1.5px solid var(--border);color:var(--ink2);font-size:.80rem;font-weight:600;padding:8px 16px;border-radius:50px;transition:all var(--t);cursor:default}
+.area:hover{background:var(--red);color:#fff;border-color:var(--red);box-shadow:var(--shadow-btn)}
+
+/* ─── CONTACT ───────────────────────────────────────────────────────────── */
+.contact-sec{background:#0A0A0A;padding:80px 40px;border-top:1px solid var(--border)}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.c-info h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:#fff;line-height:1.15;letter-spacing:-.02em;margin-bottom:10px}
+.c-info h2 span{color:var(--red)}
+.c-info>p{font-size:.88rem;color:rgba(255,255,255,.50);margin-bottom:28px}
+.c-items{display:flex;flex-direction:column;gap:12px}
+.c-item{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:14px 18px;border-radius:var(--r-sm);transition:all var(--t)}
+.c-item:hover{background:rgba(225,29,46,.10);border-color:rgba(225,29,46,.30)}
+.c-icon{width:38px;height:38px;background:rgba(225,29,46,.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.c-item strong{display:block;font-size:.86rem;color:#fff;font-weight:700}
+.c-item span{font-size:.77rem;color:rgba(255,255,255,.40)}
+.c-soc{display:flex;gap:10px;margin-top:18px}
+.c-soc-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.65);padding:9px 18px;border-radius:50px;font-size:.80rem;font-weight:600;font-family:var(--font);cursor:pointer;transition:all var(--t)}
+.c-soc-btn:hover{background:var(--red);border-color:var(--red);color:#fff}
+.c-policy{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:28px}
+.c-policy h4{font-size:.96rem;font-weight:700;color:#fff;margin-bottom:8px}
+.c-policy p{font-size:.82rem;color:rgba(255,255,255,.40);line-height:1.80;margin-bottom:18px}
+.c-policy p:last-child{margin-bottom:0}
+
+/* ─── ADMIN ─────────────────────────────────────────────────────────────── */
+.admin-sec{background:var(--bg2);padding:60px 40px;border-top:2px dashed var(--border)}
+.admin-lbl{display:inline-flex;align-items:center;gap:6px;background:var(--red-pale);border:1.5px solid rgba(225,29,46,.30);color:var(--red);font-size:.68rem;font-weight:800;padding:4px 14px;border-radius:50px;text-transform:uppercase;letter-spacing:.10em;margin-bottom:10px}
+.admin-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+.admin-top h2{font-size:1.6rem;font-weight:800;letter-spacing:-.02em;color:var(--white)}
+.admin-top p{font-size:.82rem;color:var(--ink3);margin-top:2px}
+.btn-rf{background:var(--red);color:#fff;padding:10px 22px;border-radius:50px;border:none;font-size:.82rem;font-weight:700;font-family:var(--font);cursor:pointer;box-shadow:var(--shadow-btn);transition:all var(--t)}
+.btn-rf:hover{background:var(--red-dk);transform:translateY(-1px)}
+.stats-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.stat-b{background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);padding:18px 26px;flex:1;min-width:110px;text-align:center}
+.stat-b .n{font-size:2.2rem;font-weight:800;color:var(--red);line-height:1}
+.stat-b .l{font-size:.68rem;color:var(--ink3);text-transform:uppercase;letter-spacing:.09em;margin-top:2px}
+.tbl-wrap{background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.20);overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.81rem}
+thead th{text-align:left;padding:12px 16px;background:var(--red-pale);border-bottom:1.5px solid rgba(225,29,46,.25);color:var(--red);font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;white-space:nowrap}
+tbody tr{border-bottom:1px solid var(--border);transition:background var(--t)}
+tbody tr:hover{background:var(--card2)}
+tbody td{padding:13px 16px;color:var(--ink3);vertical-align:middle}
+tbody td strong{color:var(--white);font-weight:700}
+.sb{display:inline-flex;align-items:center;padding:3px 10px;border-radius:50px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.sp{background:rgba(245,158,11,.12);color:#F59E0B}
+.sc{background:rgba(96,165,250,.12);color:#60A5FA}
+.sd{background:rgba(34,197,94,.12);color:#22C55E}
+.sx{background:rgba(225,29,46,.12);color:var(--red-lt)}
+.a-sel{background:var(--bg2);border:1.5px solid var(--border);color:var(--ink2);padding:5px 10px;border-radius:8px;font-size:.76rem;font-family:var(--font);font-weight:600;cursor:pointer}
+.btn-d{background:rgba(225,29,46,.12);border:1px solid rgba(225,29,46,.25);color:var(--red-lt);padding:5px 12px;border-radius:7px;font-size:.74rem;font-weight:700;font-family:var(--font);cursor:pointer;transition:all var(--t)}
+.btn-d:hover{background:rgba(225,29,46,.25)}
+.no-data{text-align:center;padding:48px;color:var(--ink3);font-size:.88rem}
+
+/* ─── FOOTER ────────────────────────────────────────────────────────────── */
+footer{background:#080808;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;border-top:1px solid var(--border)}
+footer p{font-size:.76rem;color:rgba(255,255,255,.28)}
+footer a{color:var(--red)}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE — tablet (≤1024px)
+═══════════════════════════════════════════════════════════════════════════ */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr 1fr}
+  .hero-left{padding:60px 36px 60px 40px}
+  .hero-right{padding:48px 40px 48px 24px}
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE — mobile (≤860px)
+   Hero collapses to single column; form floats to top
+═══════════════════════════════════════════════════════════════════════════ */
+@media(max-width:860px){
+  /* ── Nav ── */
+  .navbar{padding:0 20px;height:64px}
+  .nav-links{display:none}
+  .btn-call-nav{display:none}
+  .hamburger{display:flex}
+
+  /* ── Hero layout ── */
+  .hero{
+    grid-template-columns:1fr;
+    min-height:auto;
+    padding-bottom:0;
+  }
+  .hero-left{
+    padding:36px 20px 28px;
+    order:2;
+  }
+  .hero-right{
+    padding:28px 20px 0;
+    order:1;
+  }
+
+  /* ── Form card — full-width, no max-width clamp ── */
+  .form-card{
+    max-width:100%;
+    border-radius:18px;
+    padding:28px 22px;
+    /* Subtle bottom shadow so it "sits" on the hero gradient */
+    box-shadow:0 12px 40px rgba(0,0,0,.55);
+  }
+  .form-card h3{font-size:1.1rem}
+  .form-card .sub{font-size:.80rem;margin-bottom:20px}
+
+  /* ── Inputs — 16px prevents iOS auto-zoom ── */
+  .fg input,
+  .fg select,
+  .fg textarea{
+    font-size:16px;          /* critical: stops iOS zooming on focus */
+    padding:13px 14px;
+    min-height:48px;         /* comfortable touch target */
+    border-radius:10px;
+  }
+  .fg label{font-size:.76rem}
+  .fg{margin-bottom:12px;gap:5px}
+
+  /* ── Two-column row collapses at 860 on mobile ── */
+  .form-row{grid-template-columns:1fr;gap:0}
+
+  /* ── Submit button — larger tap target ── */
+  .btn-submit{
+    padding:16px;
+    font-size:1rem;
+    min-height:54px;
+    border-radius:14px;
+    margin-top:6px;
+  }
+
+  /* ── Rest of page ── */
+  .contact-sec{padding:64px 24px}
+  .c-grid{grid-template-columns:1fr;gap:32px}
+  .section{padding:64px 24px}
+  .brands-strip{padding:18px 20px}
+  .admin-sec{padding:48px 24px}
+  .promise{padding:48px 24px}
+  footer{padding:20px 24px;flex-direction:column;text-align:center}
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE — small phones (≤560px)
+═══════════════════════════════════════════════════════════════════════════ */
+@media(max-width:560px){
+  .hero h1{font-size:1.9rem}
+  .hero-tags{gap:8px}
+  .htag{font-size:.72rem;padding:6px 12px}
+  .hero-btns{flex-direction:column}
+  .btn-ph,.btn-sh{justify-content:center;width:100%}
+
+  .form-card{
+    padding:22px 16px;
+    border-radius:14px;
+  }
+  .form-card h3{font-size:1rem}
+
+  /* Slightly smaller label text */
+  .fg label{font-size:.74rem}
+  /* Keep 16px on inputs — never reduce below this on iOS */
+  .fg input,
+  .fg select,
+  .fg textarea{
+    font-size:16px;
+    padding:12px 13px;
+    border-radius:9px;
+  }
+  .fg textarea{min-height:68px}
+
+  /* Submit */
+  .btn-submit{
+    font-size:.95rem;
+    padding:15px;
+    border-radius:12px;
+  }
+
+  /* Form note smaller */
+  .form-note{font-size:.68rem}
+
+  /* Stats */
+  .stats-row{gap:10px}
+  .stat-b{padding:14px 18px}
+  .stat-b .n{font-size:1.8rem}
+
+  /* Rating badge wraps gracefully */
+  .rating-badge{gap:6px;padding:8px 14px}
+  .rating-badge .rt,.rating-badge .tr{font-size:.74rem}
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE — very small (≤380px)
+═══════════════════════════════════════════════════════════════════════════ */
+@media(max-width:380px){
+  .navbar{padding:0 16px}
+  .logo-text h1{font-size:1rem}
+  .logo-text p{display:none}
+
+  .hero h1{font-size:1.6rem}
+  .hero-left{padding:28px 16px 20px}
+  .hero-right{padding:20px 16px 0}
+
+  .form-card{padding:18px 14px;border-radius:12px}
+  .form-card h3{font-size:.96rem}
+  .form-card .sub{font-size:.76rem;margin-bottom:16px}
+
+  .fg{margin-bottom:10px}
+  .fg input,
+  .fg select,
+  .fg textarea{
+    font-size:16px;   /* must stay 16px */
+    padding:11px 12px;
+    min-height:46px;
+  }
+
+  .btn-submit{min-height:50px;font-size:.9rem}
+
+  .s-title{font-size:1.4rem}
+  .float-btns{right:12px;bottom:14px}
+  .float-btn,.float-btn img{width:52px;height:52px}
+}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-logo">
+    <div class="logo-icon">
+        <img src="/logo.png" alt="Logo">
+    </div>
+    <div class="logo-text">
+      <h1>Brother's Bike Point</h1>
+      <p>Hyderabad Two-Wheeler Service</p>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#top">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="tel:+917569776373"><button class="btn-call-nav">Call Us</button></a>
+    <a href="#booking"><button class="btn-book-nav">Book Now</button></a>
+    <button class="hamburger" id="hbg" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="#top" onclick="closeMenu()">Home</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#how" onclick="closeMenu()">How It Works</a>
+  <a href="#pricing" onclick="closeMenu()">Pricing</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <div class="mb-btns">
+    <a href="tel:+917569776373"><button class="btn-book-nav" style="background:#2F2F2F;border:2px solid #9CA3AF">📞 Call Us</button></a>
+    <a href="#booking"><button class="btn-book-nav">Book Now</button></a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-left">
+    <div class="rating-badge">
+      <span class="stars">★★★★☆</span>
+      <span class="rt">4.8/5 customer rating</span>
+      <span class="dot"></span>
+      <span class="tr">Trusted bike service in Hyderabad</span>
+    </div>
+    <h1>
+      <span class="white">ONLINE</span>
+      <span class="red">PROFESSIONAL BIKE<br>SERVICE</span>
+      <span class="white">&amp; REPAIRS IN<br>HYDERABAD</span>
+    </h1>
+    <p class="hero-sub">Get your two-wheeler serviced at your doorstep. Free pick-up &amp; drop, 100% genuine parts, and a 7-day warranty.</p>
+    <div class="hero-tags">
+      <span class="htag">🏍️ Free Pick-up &amp; Drop</span>
+      <span class="htag">🛡️ 7-Day Warranty</span>
+      <span class="htag">⚙️ OEM Parts</span>
+      <span class="htag">⚡ Same Day</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#booking"><button class="btn-ph">📅 Book a Service</button></a>
+      <a href="tel:+917569776373"><button class="btn-sh">📞 Call Now</button></a>
+    </div>
+  </div>
+  <div class="hero-right" id="booking">
+    <div class="form-card">
+      <!-- ── Success state (hidden until submission) ── -->
+      <div id="successState" style="display:none;text-align:center;padding:24px 8px">
+        <div style="width:60px;height:60px;background:rgba(34,197,94,.12);border:2px solid rgba(34,197,94,.30);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 16px">✅</div>
+        <h3 style="font-size:1.1rem;margin-bottom:10px;color:#fff">It has been noted!</h3>
+        <p style="font-size:.86rem;color:var(--ink3);line-height:1.7">Our team will contact you soon.</p>
+      </div>
+
+      <!-- ── Form (shown by default) ── -->
+      <div id="formState">
+      <h3>Get a Free Callback</h3>
+      <p class="sub">Share your details for a quick estimate and slot confirmation.</p>
+      <form id="quoteForm" action="https://sheetdb.io/api/v1/nxgnhrav5eebz" method="POST" autocomplete="off">
+        <div class="fg">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name"/>
+        </div>
+        <div class="fg">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required maxlength="10" inputmode="numeric" autocomplete="tel"/>
+        </div>
+        <div class="fg">
+          <label for="bike_type">Motorcycle</label>
+          <select id="bike_type" name="bike_type" required>
+            <option value="">Select your bike</option>
+            <option value="120cc-200cc">120cc – 200cc</option>
+            <option value="royal-enfield-350">Royal Enfield Classic 350</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="pickup_location">Pickup location</label>
+          <input type="text" id="pickup_location" name="pickup_location" placeholder="Enter your area/locality" required autocomplete="address-level2"/>
+        </div>
+        <div class="form-row">
+          <div class="fg">
+            <label for="vehicle_model">Vehicle model</label>
+            <input type="text" id="vehicle_model" name="vehicle_model" placeholder="e.g., Honda CB Shine"/>
+          </div>
+          <div class="fg">
+            <label for="preferred_date">Preferred date</label>
+            <input type="date" id="preferred_date" name="preferred_date"/>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="message">Additional notes (optional)</label>
+          <textarea id="message" name="message" placeholder="Describe any specific issues..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn">Get Free Quote →</button>
+      </form>
+      <div id="formMsg" class="form-msg"></div>
+      <p class="form-note">🔒 Your data is safe. No spam, ever.</p>
+      </div><!-- /formState -->
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<div class="brands-strip">
+  <div class="brands-inner">
+    <span class="bl">Bikes we service →</span>
+    <span class="brand-tag">Honda</span><span class="brand-tag">Hero</span><span class="brand-tag">Yamaha</span><span class="brand-tag">Bajaj</span><span class="brand-tag">TVS</span><span class="brand-tag">Suzuki</span><span class="brand-tag">Royal Enfield</span><span class="brand-tag">KTM</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section warm" id="services">
+  <div class="s-eyebrow">🔧 What We Fix</div>
+  <h2 class="s-title">Complete Two-Wheeler<br><span>Repair &amp; Service</span></h2>
+  <p class="s-desc">Hard starting? Strange noises? Low mileage? We fix the root cause so your ride feels brand new again.</p>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-icon">🔩</div><h4>Engine &amp; Fluids</h4><ul><li><span class="ck">✓</span>Engine oil level and top-up</li><li><span class="ck">✓</span>Air filter cleaning</li><li><span class="ck">✓</span>Leak and idle inspection</li><li><span class="ck">✓</span>Carburetor / fuel system check</li></ul></div>
+    <div class="svc-card"><div class="svc-icon">🛑</div><h4>Brakes &amp; Tyres</h4><ul><li><span class="ck">✓</span>Front and rear brake inspection</li><li><span class="ck">✓</span>Brake adjustment and lever feel</li><li><span class="ck">✓</span>Tyre pressure and tread check</li><li><span class="ck">✓</span>Brake pad replacement</li></ul></div>
+    <div class="svc-card"><div class="svc-icon">⛓️</div><h4>Drive &amp; Controls</h4><ul><li><span class="ck">✓</span>Chain cleaning and lubrication</li><li><span class="ck">✓</span>Chain tension alignment</li><li><span class="ck">✓</span>Clutch and throttle play check</li><li><span class="ck">✓</span>Gear shifting inspection</li></ul></div>
+    <div class="svc-card"><div class="svc-icon">⚡</div><h4>Electricals &amp; Test</h4><ul><li><span class="ck">✓</span>Battery and terminals check</li><li><span class="ck">✓</span>Indicators, horn, lights test</li><li><span class="ck">✓</span>Road-test confirmation</li><li><span class="ck">✓</span>Wiring and ignition check</li></ul></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section alt" id="how">
+  <div class="s-eyebrow">📋 The Process</div>
+  <h2 class="s-title">How the <span>Service Works</span></h2>
+  <p class="s-desc">A clear, transparent process so you're always informed at every step.</p>
+  <div class="steps-grid">
+    <div class="step-card"><div class="step-num">01</div><div class="step-icon">📱</div><h4>Book a Slot</h4><p>Call or WhatsApp to reserve your preferred time. Takes under 2 minutes.</p></div>
+    <div class="step-card"><div class="step-num">02</div><div class="step-icon">🔍</div><h4>Inspect &amp; Estimate</h4><p>We inspect your bike and confirm the full scope. No surprise charges ever.</p></div>
+    <div class="step-card"><div class="step-num">03</div><div class="step-icon">🛠️</div><h4>Service &amp; Updates</h4><p>Mechanic services your bike and keeps you updated throughout the day.</p></div>
+    <div class="step-card"><div class="step-num">04</div><div class="step-icon">🏍️</div><h4>Pickup &amp; Support</h4><p>Get your bike back with a full service summary and guidance.</p></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section warm" id="pricing">
+  <div class="s-eyebrow">💳 Transparent Pricing</div>
+  <h2 class="s-title">Clear Service <span>Charges</span></h2>
+  <p class="s-desc">No hidden costs. You approve every extra repair before we start. Parts billed only if needed.</p>
+  <div class="p-grid">
+    <div class="p-card pop"><div class="pop-badge">⭐ Most Popular</div><div class="p-type">Standard Bikes</div><div class="p-price"><span class="p-new">₹1,199</span><span class="p-old">₹2,500</span></div><p class="p-bike">120cc – 200cc bikes</p><ul class="p-feats"><li><span class="gck">✓</span>Full engine inspection</li><li><span class="gck">✓</span>Oil top-up &amp; air filter</li><li><span class="gck">✓</span>Brake &amp; tyre check</li><li><span class="gck">✓</span>Chain cleaning &amp; lube</li><li><span class="gck">✓</span>Electrical &amp; road test</li><li><span class="gck">✓</span>7-day service warranty</li></ul><a href="tel:+917569776373"><button class="btn-p">Book This Plan</button></a></div>
+    <div class="p-card"><div class="p-type">Royal Enfield</div><div class="p-price"><span class="p-new">₹2,499</span><span class="p-old">₹3,500</span></div><p class="p-bike">Royal Enfield Classic 350</p><ul class="p-feats"><li><span class="gck">✓</span>Full engine inspection</li><li><span class="gck">✓</span>Oil top-up &amp; air filter</li><li><span class="gck">✓</span>Brake &amp; tyre check</li><li><span class="gck">✓</span>Chain cleaning &amp; lube</li><li><span class="gck">✓</span>Electrical &amp; road test</li><li><span class="gck">✓</span>7-day service warranty</li></ul><a href="tel:+917569776373"><button class="btn-p">Book This Plan</button></a></div>
+    <div class="p-card"><div class="p-type">Express Check</div><div class="p-price"><span class="p-new">₹499</span></div><p class="p-bike">Any bike — starting price</p><ul class="p-feats"><li><span class="gck">✓</span>Basic safety inspection</li><li><span class="gck">✓</span>Tyre pressure check</li><li><span class="gck">✓</span>Lights &amp; horn test</li><li><span class="gck">✓</span>Quick road assessment</li></ul><a href="tel:+917569776373"><button class="btn-p">Book Express</button></a></div>
+  </div>
+  <p style="text-align:center;color:var(--ink3);font-size:.78rem;margin-top:18px;">₹400 cancellation fee if cancelled after the mechanic has reached your location.</p>
+</section>
+
+<!-- PROMISE -->
+<div class="promise">
+  <div style="text-align:center;margin-bottom:40px">
+    <div class="s-eyebrow" style="background:rgba(225,29,46,.15);border-color:rgba(225,29,46,.35);color:var(--red-lt)">🤝 Our Commitment</div>
+    <h2 class="s-title" style="color:#fff;margin-top:10px">Our Service <span>Promise</span></h2>
+  </div>
+  <div class="pr-grid">
+    <div class="pr-card"><div class="pr-icon">🛡️</div><h4>7-Day Service Warranty</h4><p>Same issue within 7 days? We fix it for free. No questions asked.</p></div>
+    <div class="pr-card"><div class="pr-icon">⚙️</div><h4>Genuine Parts Guarantee</h4><p>100% OEM parts only. Old parts returned with original bills as proof.</p></div>
+    <div class="pr-card"><div class="pr-icon">👨‍🔧</div><h4>Certified Mechanics</h4><p>Experienced specialists for 120cc–200cc bikes and Royal Enfield motorcycles.</p></div>
+    <div class="pr-card"><div class="pr-icon">💰</div><h4>No Surprise Bills</h4><p>Full estimate given before work starts. You approve every extra repair first.</p></div>
+  </div>
+</div>
+
+<!-- WHY CHOOSE US -->
+<section class="section alt">
+  <div class="s-eyebrow">💡 Why Riders Choose Us</div>
+  <h2 class="s-title">We Focus on <span>Honesty &amp; Clarity</span></h2>
+  <div class="why-grid">
+    <div class="why-card"><div class="wi wi-o">💸</div><h4>Tired of hidden costs?</h4><p>We quote upfront. No hidden bills. You approve every repair before we start.</p></div>
+    <div class="why-card"><div class="wi wi-b">🕐</div><h4>Too busy for the garage?</h4><p>We pick up your bike from home or office and drop it back — all free of charge.</p></div>
+    <div class="why-card"><div class="wi wi-g">🔍</div><h4>Worried about fake parts?</h4><p>We use only genuine OEM parts and return old parts as proof — always.</p></div>
+    <div class="why-card"><div class="wi wi-y">⚡</div><h4>Need it done today?</h4><p>We stick to our timelines so you get your bike back exactly when you need it.</p></div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="section warm">
+  <div class="s-eyebrow">📍 Service Areas</div>
+  <h2 class="s-title">We Serve Across <span>Hyderabad</span></h2>
+  <p class="s-desc">Doorstep service available across all major areas in Hyderabad.</p>
+  <div class="areas">
+    <span class="area">Kondapur</span><span class="area">Madhapur</span><span class="area">Hitech City</span><span class="area">Gachibowli</span><span class="area">Jubilee Hills</span><span class="area">Banjara Hills</span><span class="area">Kukatpally</span><span class="area">Miyapur</span><span class="area">SR Nagar</span><span class="area">Ameerpet</span><span class="area">Ameenpur</span><span class="area">Begumpet</span><span class="area">Somajiguda</span><span class="area">Filmnagar</span><span class="area">Manikonda</span><span class="area">Narsingi</span>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section alt" id="reviews">
+  <div class="s-eyebrow">⭐ What Riders Say</div>
+  <h2 class="s-title">Rider <span>Reviews</span></h2>
+  <div class="r-header">
+    <div class="big-r">4.8</div>
+    <div class="r-meta"><div class="stars">★★★★☆</div><p>Based on all verified customer reviews</p></div>
+  </div>
+  <div class="r-grid">
+    <div class="r-card"><div class="r-stars">★★★★★</div><p class="r-text">"Booked on WhatsApp and got a slot the next morning. Clear pricing and quick updates throughout the whole process."</p><div class="r-author"><div class="r-av">😊</div><div class="r-name"><strong>Arjun K.</strong><span>Honda CB Shine · Kondapur</span></div></div></div>
+    <div class="r-card"><div class="r-stars">★★★★★</div><p class="r-text">"They confirmed everything before starting work. The service summary at the end was super helpful and detailed."</p><div class="r-author"><div class="r-av">🙂</div><div class="r-name"><strong>Sahana R.</strong><span>TVS Apache 160 · Madhapur</span></div></div></div>
+    <div class="r-card"><div class="r-stars">★★★★☆</div><p class="r-text">"Smooth pickup, great brake work, and absolutely zero surprise charges. Will definitely use them again!"</p><div class="r-author"><div class="r-av">😎</div><div class="r-name"><strong>Imran P.</strong><span>Bajaj Pulsar 150 · Gachibowli</span></div></div></div>
+    <div class="r-card"><div class="r-stars">★★★★★</div><p class="r-text">"The mechanic explained each issue clearly and kept me updated throughout. Loved the total transparency."</p><div class="r-author"><div class="r-av">😄</div><div class="r-name"><strong>Riya S.</strong><span>Yamaha FZ · Hitech City</span></div></div></div>
+    <div class="r-card"><div class="r-stars">★★★★☆</div><p class="r-text">"Classic 350 service was thorough and careful. Felt like a premium handover experience with full documentation."</p><div class="r-author"><div class="r-av">🤩</div><div class="r-name"><strong>Manoj D.</strong><span>Royal Enfield 350 · Kukatpally</span></div></div></div>
+    <div class="r-card"><div class="r-stars">★★★★★</div><p class="r-text">"Called before any extra work and stuck to the estimate perfectly. Best bike service I've had in Hyderabad."</p><div class="r-author"><div class="r-av">🥰</div><div class="r-name"><strong>Priya N.</strong><span>Suzuki Gixxer 150 · Jubilee Hills</span></div></div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section warm" id="faq">
+  <div class="s-center"><div class="s-eyebrow">❓ FAQs</div><h2 class="s-title">Frequently Asked <span>Questions</span></h2><p class="s-desc" style="margin:0 auto 48px">Everything you need to know before booking your service.</p></div>
+  <div class="faq-list">
+    <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">What are the service charges?<span class="faq-arr">+</span></button><div class="faq-a"><p>₹1,199 for 120cc–200cc bikes and ₹2,499 for Royal Enfield Classic 350. Parts replacement requires your approval before we proceed. Express check starts from ₹499.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">Which bikes do you service?<span class="faq-arr">+</span></button><div class="faq-a"><p>120cc to 200cc bikes from Honda, Hero, Yamaha, Bajaj, TVS, Suzuki, KTM, and Royal Enfield Classic 350 motorcycles across Hyderabad.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">Do I need to book in advance?<span class="faq-arr">+</span></button><div class="faq-a"><p>Yes, booking helps us assign the right mechanic and plan your slot efficiently. Call or WhatsApp — it takes under 2 minutes.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">How does free pick-up &amp; drop work?<span class="faq-arr">+</span></button><div class="faq-a"><p>Our executive picks up your bike from your home or office, services it at our workshop, and returns it to you — all at no extra charge, same day.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">What is the 7-day warranty?<span class="faq-arr">+</span></button><div class="faq-a"><p>If the same issue you booked for reappears within 7 days of service, we fix it for free — no questions asked, no charges.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">What areas do you serve in Hyderabad?<span class="faq-arr">+</span></button><div class="faq-a"><p>We serve Kondapur, Madhapur, Hitech City, Gachibowli, Jubilee Hills, Banjara Hills, Kukatpally, Miyapur, Ameerpet, Secunderabad and all surrounding areas. Mon–Sun 9 AM – 9 PM.</p></div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <div class="c-grid">
+    <div class="c-info">
+      <h2>Ready for a<br><span>Smoother Ride?</span></h2>
+      <p>Book your slot in seconds. We handle everything else. Mon–Sun, 9 AM – 9 PM.</p>
+      <div class="c-items">
+        <a href="tel:+917569776373" class="c-item"><div class="c-icon">📞</div><div><strong>+91 75697 76373</strong><span>Call to book a service slot</span></div></a>
+        <a href="https://wa.me/917569776373" target="_blank" class="c-item"><div class="c-icon">💬</div><div><strong>WhatsApp Us</strong><span>Fast booking &amp; live status updates</span></div></a>
+        <a href="mailto:brothersbikepoint1@gmail.com" class="c-item"><div class="c-icon">📧</div><div><strong>brothersbikepoint1@gmail.com</strong><span>Send us an email query</span></div></a>
+        <div class="c-item"><div class="c-icon">📍</div><div><strong>Hyderabad, Telangana</strong><span>Citywide doorstep service</span></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="c-policy">
+        <h4>Service Policy</h4>
+        <p>Service charges are ₹1,199 for 120cc–200cc bikes and ₹2,499 for Royal Enfield Classic 350. Parts or additional repairs are quoted separately and require your approval before work begins. A mandatory ₹400 cancellation fee applies if the service is cancelled after the executive has reached your location.</p>
+        <h4>Privacy Policy</h4>
+        <p>We only collect information you provide for scheduling your service. Your personal data is never sold, rented, or shared with any third parties under any circumstances.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMIN PANEL -->
+<section class="admin-sec" id="admin">
+  <div class="admin-lbl">🔐 Admin — Form Submissions</div>
+  <div class="admin-top">
+    <div><h2>Customer Quote Requests</h2><p>All form submissions stored in your SQLite database, displayed here in real-time.</p></div>
+    <button class="btn-rf" onclick="loadQ()">🔄 Refresh</button>
+  </div>
+  <div class="stats-row">
+    <div class="stat-b"><div class="n" id="sT">—</div><div class="l">Total</div></div>
+    <div class="stat-b"><div class="n" id="sP">—</div><div class="l">Pending</div></div>
+    <div class="stat-b"><div class="n" id="sC">—</div><div class="l">Contacted</div></div>
+    <div class="stat-b"><div class="n" id="sD">—</div><div class="l">Completed</div></div>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Name</th><th>Phone</th><th>Bike Type</th><th>Location</th><th>Model</th><th>Date</th><th>Message</th><th>Status</th><th>Submitted</th><th>Action</th></tr></thead>
+      <tbody id="qBody"><tr><td colspan="11" class="no-data">Loading submissions…</td></tr></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Brothers Bike Hyderabad. All rights reserved.</p>
+  <p>📞 +91 75697 76373 &nbsp;·&nbsp; <a href="mailto:brothersbikepoint1@gmail.com">brothersbikepoint1@gmail.com</a> &nbsp;·&nbsp; Mon–Sun 9AM–9PM</p>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-btns">
+  <a href="tel:+917569776373" class="float-btn fc" title="Call Us">
+    <img src="phone.png" alt="Call">
+  </a>
+  <a href="https://wa.me/917569776373" target="_blank" class="float-btn whatsapp" title="WhatsApp">
+    <img src="whatsapp-icon.png" alt="WhatsApp">
+  </a>
+</div>
+
+<script>
+/* ── Nav helpers ── */
+function toggleMenu(){document.getElementById('mob').classList.toggle('open')}
+function closeMenu(){document.getElementById('mob').classList.remove('open')}
+function tFaq(btn){
+  const i=btn.closest('.faq-item');
+  document.querySelectorAll('.faq-item').forEach(x=>{if(x!==i)x.classList.remove('open')});
+  i.classList.toggle('open');
+}
+
+/* ── Date min ── */
+document.getElementById('preferred_date').min = new Date().toISOString().split('T')[0];
+
+/* ── Show / hide success state ── */
+function showSuccess(name, bikeType, location) {
+  document.getElementById('formState').style.display   = 'none';
+  document.getElementById('successState').style.display = 'block';
+  document.getElementById('successName').textContent     = '👤 ' + name;
+  document.getElementById('successBike').textContent     = '🏍️ ' + bikeType;
+  document.getElementById('successLocation').textContent = '📍 ' + location;
+}
+function resetForm() {
+  document.getElementById('successState').style.display = 'none';
+  document.getElementById('formState').style.display    = 'block';
+  document.getElementById('quoteForm').reset();
+  document.getElementById('formMsg').className = 'form-msg';
+}
+
+/* ── Single submit handler — posts to SheetDB ── */
+document.getElementById('quoteForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn  = document.getElementById('submitBtn');
+  const msg  = document.getElementById('formMsg');
+
+  /* Grab values before anything async */
+  const name     = document.getElementById('name').value.trim();
+  const phone    = document.getElementById('phone').value.trim();
+  const bikeType = document.getElementById('bike_type').value;
+  const location = document.getElementById('pickup_location').value.trim();
+  const model    = document.getElementById('vehicle_model').value.trim();
+  const date     = document.getElementById('preferred_date').value;
+  const message  = document.getElementById('message').value.trim();
+
+  /* Loading state */
+  btn.disabled    = true;
+  btn.textContent = '⏳ Sending…';
+  msg.className   = 'form-msg';
+
+  const payload = {
+    data: [{ name, phone, bike_type: bikeType, pickup_location: location,
+             vehicle_model: model, preferred_date: date, message }]
+  };
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) throw new Error('Server error ' + res.status);
+
+    /* ✅ Success — swap form for confirmation card */
+    showSuccess(name, bikeType || 'Not specified', location || 'Not specified');
+
+  } catch (err) {
+    /* ❌ Error — show inline message, keep form visible */
+    msg.className   = 'form-msg err';
+    msg.textContent = '❌ Couldn\'t submit. Please call +91 75697 76373 directly.';
+    btn.disabled    = false;
+    btn.textContent = 'Get Free Quote →';
+  }
+});
+
+/* ── Admin helpers (unchanged) ── */
+async function loadQ(){
+  const tb=document.getElementById('qBody');
+  tb.innerHTML='<tr><td colspan="11" class="no-data">Loading…</td></tr>';
+  try{
+    const[qr,sr]=await Promise.all([fetch('/api/quotes'),fetch('/api/stats')]);
+    const q=await qr.json(),s=await sr.json();
+    if(s.success){document.getElementById('sT').textContent=s.stats.total;document.getElementById('sP').textContent=s.stats.pending;document.getElementById('sC').textContent=s.stats.contacted;document.getElementById('sD').textContent=s.stats.completed;}
+    if(!q.data||q.data.length===0){tb.innerHTML='<tr><td colspan="11" class="no-data">📋 No submissions yet.</td></tr>';return;}
+    tb.innerHTML=q.data.map(r=>`<tr><td>${r.id}</td><td><strong>${esc(r.name)}</strong></td><td><a href="tel:${r.phone}" style="color:var(--red);font-weight:600">${esc(r.phone)}</a></td><td>${esc(r.bike_type)}</td><td>${esc(r.pickup_location)}</td><td>${r.vehicle_model?esc(r.vehicle_model):'—'}</td><td>${r.preferred_date?esc(r.preferred_date):'—'}</td><td style="max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.message?esc(r.message):''}">${r.message?esc(r.message):'—'}</td><td><select class="a-sel" onchange="updS(${r.id},this.value)"><option value="pending" ${r.status==='pending'?'selected':''}>Pending</option><option value="contacted" ${r.status==='contacted'?'selected':''}>Contacted</option><option value="completed" ${r.status==='completed'?'selected':''}>Completed</option><option value="cancelled" ${r.status==='cancelled'?'selected':''}>Cancelled</option></select></td><td style="white-space:nowrap;font-size:.76rem">${new Date(r.created_at).toLocaleString('en-IN')}</td><td><button class="btn-d" onclick="delQ(${r.id})">Delete</button></td></tr>`).join('');
+  }catch{tb.innerHTML='<tr><td colspan="11" class="no-data">⚠️ Server not connected.</td></tr>';}
+}
+async function updS(id,st){await fetch(`/api/quotes/${id}/status`,{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({status:st})});loadQ();}
+async function delQ(id){if(!confirm(`Delete #${id}?`))return;await fetch(`/api/quotes/${id}`,{method:'DELETE'});loadQ();}
+function esc(s){const d=document.createElement('div');d.appendChild(document.createTextNode(s));return d.innerHTML;}
+loadQ();
+</script>
+</body>
+</html>
